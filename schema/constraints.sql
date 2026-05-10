@@ -55,7 +55,7 @@ SELECT
     client_full_name,
     total_orders,
     COALESCE(lifetime_value, 0.00) AS total_revenue,
-    COALESCE(avg_spent_per_order, 0.00) AS average_order_value, -- Added comma here
+    COALESCE(avg_spent_per_order, 0.00) AS average_order_value, 
     ROW_NUMBER() OVER (ORDER BY lifetime_value DESC NULLS LAST) AS spending_rank,
     DENSE_RANK() OVER (ORDER BY total_orders DESC) AS volume_rank
 FROM client_stats;
