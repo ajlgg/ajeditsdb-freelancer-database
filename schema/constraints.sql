@@ -60,6 +60,8 @@ SELECT
     DENSE_RANK() OVER (ORDER BY total_orders DESC) AS volume_rank
 FROM client_stats;
 
+SELECT * FROM client_financial_summary ORDER BY spending_rank LIMIT 10;
+
 
 DELETE FROM reviews 
 WHERE order_id IN (
