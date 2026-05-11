@@ -14,7 +14,7 @@ ALTER TABLE service_packages ADD COLUMN on_sale BOOLEAN DEFAULT FALSE;
 UPDATE service_packages SET price = price * 0.9 WHERE package_type = 'Basic';
 
 
-L
+
 ALTER TABLE orders ADD COLUMN completed_at DATE;
 UPDATE orders SET status = 'Completed' WHERE order_date < '2025-01-01';
 
